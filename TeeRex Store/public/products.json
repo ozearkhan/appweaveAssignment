@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Black Polo",
+    "color": "Black",
+    "type": "Polo",
+    "gender": "Men",
+    "price": 300,
+    "stock": 10,
+    "image": "path/to/black-polo.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Blue Polo",
+    "color": "Blue",
+    "type": "Polo",
+    "gender": "Men",
+    "price": 350,
+    "stock": 15,
+    "image": "path/to/blue-polo.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Green Round",
+    "color": "Green",
+    "type": "Round",
+    "gender": "Women",
+    "price": 400,
+    "stock": 20,
+    "image": "path/to/green-round.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Pink Hoodie",
+    "color": "Pink",
+    "type": "Hoodie",
+    "gender": "Women",
+    "price": 500,
+    "stock": 5,
+    "image": "path/to/pink-hoodie.jpg"
+  }
+]
