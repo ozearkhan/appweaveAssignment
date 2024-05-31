@@ -7,7 +7,7 @@
     "gender": "Men",
     "price": 300,
     "stock": 10,
-    "image": "path/to/black-polo.jpg"
+    "image": "/images/black-polo.jpg"
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "gender": "Men",
     "price": 350,
     "stock": 15,
-    "image": "path/to/blue-polo.jpg"
+    "image": "/images/blue-polo.jpg"
   },
   {
     "id": 3,
@@ -27,7 +27,7 @@
     "gender": "Women",
     "price": 400,
     "stock": 20,
-    "image": "path/to/green-round.jpg"
+    "image": "/images/green-round.jpg"
   },
   {
     "id": 4,
@@ -37,6 +37,6 @@
     "gender": "Women",
     "price": 500,
     "stock": 5,
-    "image": "path/to/pink-hoodie.jpg"
+    "image": "/images/pink-hoodie.jpg"
   }
 ]
