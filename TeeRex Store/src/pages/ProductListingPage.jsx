@@ -47,14 +47,14 @@ const ProductListingPage = () => {
         <div>
             <Navbar />
             <div className="container mx-auto mt-8 px-4">
-                <div className="flex flex-col md:flex-row justify-between items-center">
+                <div className="flex flex-col md:flex-row justify-center items-center">
                     <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
                 </div>
-                <div className="flex flex-col md:flex-row mt-8 space-y-8 md:space-y-0 md:space-x-8">
+                <div className="flex flex-col md:flex-row mt-8 space-y-8 md:space-y-0 md:space-x-24">
                     <div className="w-full md:w-1/4">
                         <ProductFilter filters={filters} setFilters={setFilters}/>
                     </div>
-                    <div className="w-full md:w-3/4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="w-full md:w-3/4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16">
                         {filteredProducts.map(product => (
                             <ProductCard key={product.id} product={product} addToCart={addToCart}/>
                         ))}
