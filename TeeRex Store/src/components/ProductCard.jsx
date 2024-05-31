@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import { cartState } from '../atom.js';
 import { Button } from 'flowbite-react';
@@ -22,17 +22,32 @@ const ProductCard = ({ product }) => {
     const [quantity, setQuantity] = useState(1);
     const [isInCart, setIsInCart] = useState(false);
 
+    useEffect(() => {
+        const cartItem = cart.find(item => item.id === product.id);
+        if (cartItem) {
+            setQuantity(cartItem.quantity);
+            setIsInCart(true);
+        } else {
+            setQuantity(1);
+            setIsInCart(false);
+        }
+    }, [cart, product.id]);
+
     const addToCart = () => {
         setCart([...cart, { ...product, quantity }]);
         setIsInCart(true);
     };
 
     const handleIncrement = () => {
-        setQuantity(quantity + 1);
-        const updatedCart = cart.map(item =>
-            item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
-        );
-        setCart(updatedCart);
+        if (quantity < product.stock) {
+            setQuantity(quantity + 1);
+            const updatedCart = cart.map(item =>
+                item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+            );
+            setCart(updatedCart);
+        } else {
+            alert('Cannot add more than available stock');
+        }
     };
 
     const handleDecrement = () => {
@@ -61,20 +76,20 @@ const ProductCard = ({ product }) => {
                     <div className="font-bold text-sm">{product.name}</div>
                 </div>
             </div>
-            <div className=" py-2 flex items-center justify-between">
+            <div className="py-2 flex items-center justify-between">
                 <p className="text-gray-700 text-base font-bold pl-8">₹{product.price}</p>
                 {isInCart ? (
                     <div className="flex items-center">
                         <button
                             onClick={handleDecrement}
-                            className="text-gray-800 font-bold py-1 px-3"
+                            className="text-gray-800 font-bold py-2 px-3"
                         >
                             -
                         </button>
                         <span className="font-bold px-3">{quantity}</span>
                         <button
                             onClick={handleIncrement}
-                            className="text-gray-800 font-bold py-1 px-3"
+                            className="text-gray-800 font-bold py-3 px-3"
                         >
                             +
                         </button>

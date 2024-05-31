@@ -31,11 +31,9 @@ const ShoppingCartItem = ({ product, removeFromCart, updateQuantity }) => {
             </div>
             <div className="flex-1 sm:ml-4 mt-2 sm:mt-0">
                 <h4 className="text-lg font-semibold">{product.name}</h4>
-
             </div>
             <span className="text-gray-600 px-4">QTY: </span>
             <div className="flex items-center mt-2 sm:mt-0">
-
                 <TextInput
                     type="number"
                     min="1"
