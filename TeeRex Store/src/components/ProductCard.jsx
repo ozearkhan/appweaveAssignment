@@ -61,8 +61,8 @@ const ProductCard = ({ product }) => {
                     <div className="font-bold text-sm">{product.name}</div>
                 </div>
             </div>
-            <div className="px-4 py-2 flex items-center justify-between">
-                <p className="text-gray-700 text-base font-bold">₹{product.price}</p>
+            <div className=" py-2 flex items-center justify-between">
+                <p className="text-gray-700 text-base font-bold pl-8">₹{product.price}</p>
                 {isInCart ? (
                     <div className="flex items-center">
                         <button
