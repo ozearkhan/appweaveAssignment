@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.product-card {
+    height: 300px;
+}
+
+.parent-container {
+    height: auto;
+}

@@ -34,7 +34,7 @@ const ProductCard = ({ product }) => {
     }, [cart, product.id]);
 
     const addToCart = () => {
-        setCart([...cart, { ...product, quantity }]);
+        setCart([...cart, {...product, quantity}]);
         setIsInCart(true);
     };
 
@@ -42,7 +42,7 @@ const ProductCard = ({ product }) => {
         if (quantity < product.stock) {
             setQuantity(quantity + 1);
             const updatedCart = cart.map(item =>
-                item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+                item.id === product.id ? {...item, quantity: item.quantity + 1} : item
             );
             setCart(updatedCart);
         } else {
@@ -54,7 +54,7 @@ const ProductCard = ({ product }) => {
         if (quantity > 1) {
             setQuantity(quantity - 1);
             const updatedCart = cart.map(item =>
-                item.id === product.id ? { ...item, quantity: item.quantity - 1 } : item
+                item.id === product.id ? {...item, quantity: item.quantity - 1} : item
             );
             setCart(updatedCart);
         } else {
@@ -64,11 +64,14 @@ const ProductCard = ({ product }) => {
         }
     };
 
+
+
     return (
-        <div className="border rounded-lg overflow-hidden shadow-lg flex flex-col justify-between px-4 pt-4">
+        <div
+            className="product-card border rounded-lg overflow-hidden shadow-lg flex flex-col space-y-4 px-4 pt-4 pb-4">
             <div className="relative w-full h-52 bg-gray-100 flex items-center justify-center">
                 {product.image ? (
-                    <img className="w-full h-full object-cover" src={product.image} alt="" />
+                    <img className="w-full h-full object-cover" src={product.image} alt=""/>
                 ) : (
                     defaultImage
                 )}

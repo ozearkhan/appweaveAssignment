@@ -20,7 +20,7 @@ const ProductFilter = ({ filters, setFilters }) => {
             <h3 className="text-xl font-bold mb-4">Filters</h3>
             <Accordion>
                 <Accordion.Panel>
-                    <Accordion.Title>Filters</Accordion.Title>
+                    <Accordion.Title className="px-4">Categories</Accordion.Title>
                     <Accordion.Content>
                         <div className="mb-4 flex flex-col p-2">
                             <label className="block text-gray-700 text-sm font-bold mb-2">Gender</label>
